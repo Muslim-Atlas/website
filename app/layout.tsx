@@ -3,6 +3,7 @@ import { Syne, Unbounded } from 'next/font/google';
 import './globals.css';
 import { GlobalDecorations } from '@/components/GlobalDecorations';
 import { GlobalToasters } from '@/components/GlobalToasters';
+import Script from 'next/script';
 
 const syne = Syne({
   subsets: ['latin'],
@@ -42,6 +43,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${syne.variable} ${unbounded.variable}`} suppressHydrationWarning>
       <body className="font-sans antialiased" suppressHydrationWarning>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-9E6BJ9R0HX"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-9E6BJ9R0HX');
+          `}
+        </Script>
+
         <GlobalDecorations />
         <main id="main-content">{children}</main>
         <GlobalToasters />

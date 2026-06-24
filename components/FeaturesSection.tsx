@@ -32,9 +32,9 @@ const slides: Slide[] = [
     tabLabel: 'Mosque Finder Map',
     icon: Map,
     image: '/screenshots/mosque-map.png',
-    heading: 'Interactive Mosque Finder Map',
+    heading: 'Mosque Finder & Map',
     description:
-      'Locate nearby mosques on an interactive map.',
+      'Locate mosques near me instantly. View nearby masjids on an interactive map showing direct driving and walking directions.',
     tags: ['Interactive Maps', 'Directions', 'Live Search'],
   },
   {
@@ -42,9 +42,9 @@ const slides: Slide[] = [
     tabLabel: 'Mosque List',
     icon: List,
     image: '/screenshots/mosque-list.png',
-    heading: 'Nearby Mosque List',
+    heading: 'Find Mosques Near Me',
     description:
-      'Switch from map to list view to compare nearby mosques by rating, travel time, and distance.',
+      'Compare local mosques in a clear list view sorted by travel time, user reviews, and distance to make attending congregational prayer easy.',
     tags: ['List view', 'Ratings', 'Travel time'],
   },
   {
@@ -52,9 +52,9 @@ const slides: Slide[] = [
     tabLabel: 'Mosque Details',
     icon: Info,
     image: '/screenshots/mosque-info.png',
-    heading: 'Mosque Details',
+    heading: 'Masjid Facilities & Prayer Schedules',
     description:
-      'Open mosque profiles with ratings, address details, approximate prayer start times, nearby transport, parking, and directions.',
+      'Access local mosque profiles featuring approximate prayer and jamat schedules, parking availability, facility facilities, and transport links.',
     tags: ['Prayer schedules', 'Transport info', 'Quick directions'],
   },
   {
@@ -62,9 +62,9 @@ const slides: Slide[] = [
     tabLabel: 'Navigation',
     icon: Navigation,
     image: '/screenshots/navigation.png',
-    heading: 'Prayer-Aware Route Planning',
+    heading: 'Prayer-Aware Navigation',
     description:
-      'Compare driving, walking, and public transport routes with turn-by-turn navigation. See nearby parking, and check whether you will arrive before the next prayer.',
+      'Plan your route with turn-by-turn navigation that checks if you will arrive at the mosque in time for the next prayer.',
     tags: ['Drive/walk/transit', 'Nearby parking', 'Arrival context'],
   },
   {
@@ -72,9 +72,9 @@ const slides: Slide[] = [
     tabLabel: 'Halal Food Map',
     icon: Map,
     image: '/screenshots/food-map.png',
-    heading: 'Halal Food Map Search',
+    heading: 'Halal Food & Restaurants Near Me',
     description:
-      'Find halal restaurants visually on the map with food-specific markers and quick switching between mosque and food discovery.',
+      'Discover verified halal restaurants near me visually on a map, with category filters and quick proximity indicators from local mosques.',
     tags: ['Food map', 'Nearby places', 'Map/list toggle'],
   },
   {
@@ -82,9 +82,9 @@ const slides: Slide[] = [
     tabLabel: 'Halal Food List',
     icon: List,
     image: '/screenshots/food-list.png',
-    heading: 'Distance-Prioritized Halal Food',
+    heading: 'Nearby Halal Places Directory',
     description:
-      'Browse nearby halal restaurants in a clean list view with ratings, opening status, travel time, and distance from your selected start point.',
+      'Browse distance-prioritized halal food near me with user ratings, current opening status, average travel times, and one-tap directions.',
     tags: ['Distance-sorted list', 'Ratings', 'Opening status'],
   },
   {
@@ -92,9 +92,9 @@ const slides: Slide[] = [
     tabLabel: 'Food Place Details',
     icon: Utensils,
     image: '/screenshots/food-info.png',
-    heading: 'Halal Restaurant Profiles',
+    heading: 'Halal Dining Profiles & Reviews',
     description:
-      'View restaurant photos, reviews, opening times, travel time, website links, and directions from one place.',
+      'View restaurant photos, customer reviews, opening hours, contact details, and route coordinates in one seamless screen.',
     tags: ['Place photos', 'Travel estimates', 'One-tap directions'],
   },
   {

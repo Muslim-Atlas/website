@@ -34,7 +34,7 @@ export const HeroSection = () => {
 
           {/* Subheading */}
           <p className="text-emerald-800 text-xs sm:text-sm md:text-base max-w-xl leading-relaxed font-sans font-medium">
-            Muslim Atlas is built for your daily islamic routines. Fast, secure, and distraction-free. Free of advertisements and full of features including Quran, Prayer Tracker, and AI Assistant.
+            Muslim Atlas is the ultimate private, ad-free app for Muslims. Whether you need a reliable mosque finder to locate mosques near me, want to find verified halal food near me, or require accurate local prayer times, Muslim Atlas is designed to streamline your daily Islamic routines.
           </p>
         </motion.div>
 

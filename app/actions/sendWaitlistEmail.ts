@@ -27,7 +27,7 @@ export async function sendWaitlistEmail(formData: FormData) {
   try {
     // Notify owner
     const { error: ownerError } = await resend.emails.send({
-      from: 'Muslim Atlas <noreply@muslimatlas.app>',
+      from: 'Muslim Atlas <noreply@notifications.yqwebstudio.com>',
       to: toAddress,
       subject: `New Waitlist Sign-up: ${safeEmail}`,
       html: `
@@ -48,7 +48,7 @@ export async function sendWaitlistEmail(formData: FormData) {
 
     // Send confirmation to subscriber
     await resend.emails.send({
-      from: 'Muslim Atlas <noreply@muslimatlas.app>',
+      from: 'Muslim Atlas <noreply@notifications.yqwebstudio.com>',
       to: safeEmail,
       subject: "You're on the Muslim Atlas waitlist 🕌",
       html: `
@@ -66,7 +66,7 @@ export async function sendWaitlistEmail(formData: FormData) {
             Download Android Alpha
           </a>
           <p style="margin-top: 32px; font-size: 13px; color: #475569;">
-            JazakAllah khayran for your support.<br />— The Muslim Atlas Team
+            JazakAllah khair for your support.<br />- The Muslim Atlas Team
           </p>
         </div>
       `,

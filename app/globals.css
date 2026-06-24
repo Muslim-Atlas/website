@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 40% 9%;
+    --card-foreground: 210 40% 98%;
+
+    --primary: 160 84% 39%;
+    --primary-light: 158 64% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 217 32% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 172 66% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 160 84% 39%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-inter), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background-color: hsl(var(--card) / 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  .glass-strong {
+    background-color: hsl(var(--card) / 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--primary) / 0.15);
+  }
+
+  .gradient-orb {
+    background: radial-gradient(ellipse at center, hsl(160 84% 30% / 0.2), transparent 70%);
+    transform: translateZ(0);
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .heading-glow {
+    text-shadow: 0 0 30px hsl(160 84% 39% / 0.4), 0 0 60px hsl(160 84% 39% / 0.15);
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    line-height: 1;
+    background: linear-gradient(135deg, hsl(160 84% 39%), hsl(172 66% 45%));
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    transition: filter 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 20px hsl(160 84% 39% / 0.35);
+  }
+
+  .btn-primary:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 28px hsl(160 84% 39% / 0.5);
+  }
+
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    line-height: 1;
+    background: hsl(var(--card) / 0.6);
+    backdrop-filter: blur(8px);
+    color: hsl(var(--foreground));
+    cursor: pointer;
+    border: 1px solid hsl(var(--border));
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .btn-ghost:hover {
+    background: hsl(var(--card));
+    border-color: hsl(var(--primary) / 0.5);
+    transform: translateY(-1px);
+  }
+}
+
+/* ── Noise overlay (identical technique to portfolio) ───────────────────── */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  opacity: 0.018;
+  pointer-events: none;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAApeB9UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAANUExURQAAAP///8zMzP///67v934AAAAJcEhZcwAADsMAAA7DAcdvqGQAAABZSURBVDhPY2BgYGRkYmJmYWFjY2NnYODm4eHl4+Pn4xcQFBIWERYRFRMXERURFRMVExUXFRcVFxU3NzcXNzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzf3Nx83HzcPFzcfNy83N683Dy8vLy8vDy8PDy+vDy+vLw8vD68PDy8Prw8Prw8Pr68vL6+vL68vLy9vb69vb29vb29vb29vb29vb29vL28vb68vb69vb29vb2/vb6+vr6+vr6+vp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6enp6evLy9vb29vb28vf29vb+9vr6+np6enp6enp6enp6eoqKenp6enp6evLy8vb29vb29vb28vLy8vLy8vLy8vLy8vLy8vLy8vLy9vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy9vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy9vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL28vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb2/vb69vb69vb69vb69vb6+vp6enp6enp6enp6enp6enp6enp6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr69vb29vb29vb29vb29vb29vb29vb29vb29vb69vb69vb6+vp6+vr6+vr69vb29vb29vb29vb2+vr6+vp6enp6enp6enp6enp6enp6evr6+vn5+fn5+fn5+fn5+fn5+fn5+fn59fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn59fn5+fn5+fn5+fn5+fn5+fn5+fn5+fX5+fn5+fn5+fn5+fn5+fn5+fv7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/vz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLyuLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLSwuLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLy8vLy8vLy8vLy8vLy8vLy8uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4q+v6A9GkRAAAAAlBTV0VRYXJhYmUAAAHoAAAFB37J98AAAAAASUVORK5CYII=");
+  background-repeat: repeat;
+}

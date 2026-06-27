@@ -7,7 +7,7 @@ const BUY_ME_A_COFFEE = 'https://buymeacoffee.com/muslimatlas';
 
 export const SupportSection = () => {
   return (
-    <section id="support" className="relative pt-12 pb-24 md:pt-16 md:pb-32 xl:pt-36 xl:pb-36 2xl:pt-44 2xl:pb-44 xl:min-h-[85vh] 2xl:min-h-[95vh] xl:flex xl:items-center px-6 border-t border-black/5 bg-white/40 z-10">
+    <section id="support" className="relative pt-12 pb-24 md:pt-16 md:pb-32 xl:pt-24 xl:pb-32 2xl:py-0 xl:min-h-[85vh] 2xl:min-h-[95vh] xl:flex xl:items-center px-6 border-t border-black/5 bg-white/40 z-10">
       <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-16 items-center">
         
         {/* Left Column: Cost Statement */}

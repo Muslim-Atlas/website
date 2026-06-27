@@ -1,16 +1,19 @@
 'use client';
 
-import { Download } from 'lucide-react';
+import { useState } from 'react';
+import { Download, ChevronDown, ChevronUp } from 'lucide-react';
 import { WaitlistForm } from './WaitlistForm';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const GITHUB_RELEASES = 'https://github.com/YusufQuresh1/Muslim-Atlas/releases';
 
 export const HeroSection = () => {
+  const [activeTab, setActiveTab] = useState<'download' | 'waitlist'>('download');
+
   return (
     <section
       id="hero"
-      className="relative min-h-[100svh] flex items-center justify-center pt-8 pb-24 lg:pt-32 lg:pb-32 overflow-hidden z-10 bg-gradient-to-b from-white/60 to-transparent border-b border-black/5"
+      className="relative min-h-[100svh] flex items-center justify-center pt-24 pb-24 lg:pt-32 lg:pb-32 overflow-hidden z-10 bg-gradient-to-b from-white/60 to-transparent border-b border-black/5"
     >
       <div className="max-w-6xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center mt-4 lg:mt-8">
         
@@ -45,39 +48,99 @@ export const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.15, ease: 'easeOut' }}
           className="lg:col-span-5 flex justify-center w-full"
         >
-          <div id="hero-waitlist-card" className="w-full max-w-md px-4 py-2 lg:p-6 lg:md:p-8 flex flex-col gap-6 transition-all duration-500 rounded-3xl border border-transparent lg:border-white/80 lg:bg-white/65 lg:backdrop-blur-md lg:shadow-[0_12px_40px_rgba(0,0,0,0.05)]">
+          <div id="hero-waitlist-card" className="w-full max-w-md px-4 py-4 lg:p-6 lg:md:p-8 flex flex-col gap-4 transition-all duration-500 rounded-3xl border border-transparent lg:border-white/80 lg:bg-white/65 lg:backdrop-blur-md lg:shadow-[0_12px_40px_rgba(0,0,0,0.05)]">
             
-            {/* Waitlist Section inside the card */}
-            <div className="flex flex-col gap-3 order-3 lg:order-1">
-              <div className="flex flex-col text-center lg:text-left">
-                <h3 className="text-sm font-semibold text-emerald-950 font-unbounded">Join the Waitlist</h3>
-                <p className="text-[11px] text-emerald-800 font-medium">Get notified when the iOS app and public builds launch.</p>
-              </div>
-              <WaitlistForm compact />
+            {/* Download Section (Get the App) */}
+            <div className="flex flex-col gap-2">
+              <button
+                onClick={() => setActiveTab('download')}
+                className="w-full flex items-center justify-between text-left focus:outline-none cursor-pointer group"
+                aria-expanded={activeTab === 'download'}
+              >
+                <div className="flex flex-col">
+                  <h3 className="text-sm font-semibold text-emerald-950 font-unbounded group-hover:text-emerald-700 transition-colors">
+                    Get the App
+                  </h3>
+                  {activeTab === 'download' && (
+                    <p className="text-[11px] text-emerald-800 font-medium mt-0.5">
+                      Install the app on your Android device.
+                    </p>
+                  )}
+                </div>
+                <div className="text-emerald-700 flex-shrink-0">
+                  {activeTab === 'download' ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                </div>
+              </button>
+              
+              <AnimatePresence initial={false}>
+                {activeTab === 'download' && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.2, ease: 'easeInOut' }}
+                    className="overflow-hidden"
+                  >
+                    <div className="pt-2 flex flex-col gap-2.5">
+                      <a
+                        id="hero-download-btn"
+                        href={GITHUB_RELEASES}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-pill-primary w-full text-xs py-2.5"
+                      >
+                        <Download size={14} />
+                        Download Android APK
+                      </a>
+                      <p className="text-[9px] text-emerald-700 text-center font-mono">
+                        Version 1.0.0
+                      </p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
             {/* Technical Separator */}
-            <div className="border-t border-emerald-900/10 my-1 order-2"></div>
+            <div className="border-t border-emerald-900/10 my-1"></div>
 
-            {/* Download Section inside the card */}
-            <div className="flex flex-col gap-3 order-1 lg:order-3">
-              <div className="flex flex-col text-center lg:text-left">
-                <h3 className="text-sm font-semibold text-emerald-950 font-unbounded">Get the App</h3>
-                <p className="text-[11px] text-emerald-800 font-medium">Install the app on your Android device.</p>
-              </div>
-              <a
-                id="hero-download-btn"
-                href={GITHUB_RELEASES}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-pill-primary w-full text-xs py-2.5"
+            {/* Waitlist Section (Join the Waitlist) */}
+            <div className="flex flex-col gap-2">
+              <button
+                onClick={() => setActiveTab('waitlist')}
+                className="w-full flex items-center justify-between text-left focus:outline-none cursor-pointer group"
+                aria-expanded={activeTab === 'waitlist'}
               >
-                <Download size={14} />
-                Download Android APK
-              </a>
-              <p className="text-[9px] text-emerald-700 text-center font-mono">
-                Version 1.0.0
-              </p>
+                <div className="flex flex-col">
+                  <h3 className="text-sm font-semibold text-emerald-950 font-unbounded group-hover:text-emerald-700 transition-colors">
+                    Join the Waitlist
+                  </h3>
+                  {activeTab === 'waitlist' && (
+                    <p className="text-[11px] text-emerald-800 font-medium mt-0.5">
+                      Get notified when the iOS app and public builds launch.
+                    </p>
+                  )}
+                </div>
+                <div className="text-emerald-700 flex-shrink-0">
+                  {activeTab === 'waitlist' ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                </div>
+              </button>
+
+              <AnimatePresence initial={false}>
+                {activeTab === 'waitlist' && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.2, ease: 'easeInOut' }}
+                    className="overflow-hidden"
+                  >
+                    <div className="pt-2">
+                      <WaitlistForm compact />
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
           </div>

@@ -244,7 +244,7 @@ export const FeaturesSection = () => {
           >
             <div className="relative w-full xl:max-w-[220px] 2xl:max-w-[270px] aspect-[9/19.5] bg-zinc-950 xl:rounded-[30px] 2xl:rounded-[36px] xl:border-[4px] 2xl:border-[5px] border-zinc-900 shadow-2xl overflow-hidden flex flex-col justify-between">
               {/* Dynamic Island */}
-              <div className="absolute xl:top-2 2xl:top-2.5 left-1/2 -translate-x-1/2 xl:w-[70px] 2xl:w-[85px] xl:h-[18px] 2xl:h-[22px] bg-black rounded-full z-20 flex items-center justify-end xl:px-2 2xl:px-2.5 shadow-sm">
+              <div className="absolute xl:top-2 2xl:top-2.5 left-1/2 -translate-x-1/2 xl:w-[70px] 2xl:w-[85px] xl:h-[18px] 2xl:h-[22px] bg-black rounded-full z-50 flex items-center justify-end xl:px-2 2xl:px-2.5 shadow-sm">
                 <div className="xl:w-1 2xl:w-1.5 xl:h-1 2xl:h-1.5 bg-[#080808] rounded-full border border-white/10 shadow-[inset_0_0_2px_rgba(255,255,255,0.2)]"></div>
               </div>
 
@@ -295,7 +295,7 @@ export const FeaturesSection = () => {
           >
             <div className="relative w-full max-w-[220px] sm:max-w-[270px] aspect-[9/19.5] bg-zinc-950 rounded-[30px] sm:rounded-[36px] border-[4px] sm:border-[5px] border-zinc-900 shadow-2xl overflow-hidden flex flex-col justify-between">
               {/* Dynamic Island */}
-              <div className="absolute top-2 left-1/2 -translate-x-1/2 w-[70px] sm:w-[85px] h-[18px] sm:h-[22px] bg-black rounded-full z-20 flex items-center justify-end px-2 sm:px-2.5 shadow-sm">
+              <div className="absolute top-2 left-1/2 -translate-x-1/2 w-[70px] sm:w-[85px] h-[18px] sm:h-[22px] bg-black rounded-full z-50 flex items-center justify-end px-2 sm:px-2.5 shadow-sm">
                 <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-[#080808] rounded-full border border-white/10 shadow-[inset_0_0_2px_rgba(255,255,255,0.2)]"></div>
               </div>
 

@@ -30,7 +30,7 @@ export const HeroSection = () => {
             Android Build Available
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-emerald-950 leading-[1.1] mb-6 max-w-2xl font-unbounded">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-emerald-950 leading-[1.1] mb-6 max-w-2xl font-unbounded">
             Find mosques, halal food, and prayer times<br />
             <span className="text-emerald-600">all in one place.</span>
           </h1>

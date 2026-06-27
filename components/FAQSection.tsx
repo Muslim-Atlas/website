@@ -35,6 +35,31 @@ const faqItems: FAQItem[] = [
     question: "When is the iOS version launching and where can I download the Android APK?",
     answer: "The Android Alpha build is available today and can be downloaded directly from our official GitHub releases page. We are currently developing the iOS app. You can join the email waitlist on our home screen to be notified the moment the iOS version launches and public testing begins.",
     keywords: "download android apk, iOS waitlist, app launch notifications, github releases"
+  },
+  {
+    question: "Does Muslim Atlas show jamat (congregation) times for nearby mosques?",
+    answer: "Muslim Atlas displays approximate or community-sourced jamat times for mosques in your vicinity. Users can log in to contribute and update local masjid jamat times directly, keeping the congregation schedule accurate for everyone in the neighborhood.",
+    keywords: "jamat times near me, mosque congregation times, masjid salah times, local jamat schedule"
+  },
+  {
+    question: "Does the app include a Qibla finder compass?",
+    answer: "Yes, Muslim Atlas features a high-precision Qibla direction finder compass. By using your device's geographical coordinates and compass sensors, it calculates and displays the exact angle pointing toward the Holy Kaaba in Makkah, ensuring you can pray in the correct direction anywhere in the world.",
+    keywords: "qibla finder, qibla compass, kaaba direction, find qibla online"
+  },
+  {
+    question: "Can I read the Quran on Muslim Atlas?",
+    answer: "Yes, Muslim Atlas includes an offline-capable, ad-free Quran reader. You can read the Quran with clear Arabic script and access translations in multiple languages, making it a distraction-free tool for your daily Quran recitation.",
+    keywords: "quran app, read quran online, offline quran reader, free noble quran"
+  },
+  {
+    question: "How does the route planning feature help me pray on time?",
+    answer: "Our unique route planning calculates travel duration to a selected mosque and cross-references it with live prayer times. It alerts you if you are likely to arrive after the adhan or miss the jamat, helping you plan your commutes with your salah schedule in mind.",
+    keywords: "salah route planner, travel to mosque, drive to masjid, pray on time"
+  },
+  {
+    question: "Does Muslim Atlas track or store my location data?",
+    answer: "No, privacy is a core pillar of Muslim Atlas. The app calculates your local prayer times and Qibla direction directly on your device. Your precise location coordinates are never stored on our servers, and we never share your data with third parties, offering a completely private Islamic utility app experience.",
+    keywords: "private islamic app, secure prayer app, no tracking muslim app, privacy focused salah tracker"
   }
 ];
 

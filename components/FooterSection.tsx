@@ -73,6 +73,12 @@ export const FooterSection = () => {
               Contact
             </a>
             <Link
+              href="/faq"
+              className="text-xs text-emerald-900/70 hover:text-emerald-700 transition-colors font-medium"
+            >
+              Frequently Asked Questions
+            </Link>
+            <Link
               href="/privacy"
               className="text-xs text-emerald-900/70 hover:text-emerald-700 transition-colors font-medium"
             >

@@ -34,6 +34,16 @@ export const Navbar = () => {
   }, [mobileOpen]);
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    const isLandingPage = typeof window !== 'undefined' && window.location.pathname === '/';
+    
+    if (!isLandingPage) {
+      // If we are not on the landing page, redirect to home page with the anchor
+      e.preventDefault();
+      setMobileOpen(false);
+      window.location.href = '/' + href;
+      return;
+    }
+
     if (href === '#waitlist') {
       e.preventDefault();
       setMobileOpen(false);
@@ -87,7 +97,12 @@ export const Navbar = () => {
           href="#"
           onClick={(e) => {
             e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            const isLandingPage = typeof window !== 'undefined' && window.location.pathname === '/';
+            if (isLandingPage) {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+              window.location.href = '/';
+            }
           }}
           className="flex items-center gap-2.5 group cursor-pointer"
         >

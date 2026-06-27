@@ -224,7 +224,7 @@ export const FeaturesSection = () => {
         </motion.div>
 
         {/* Desktop-only Layout */}
-        <div className="hidden xl:grid xl:grid-cols-[minmax(0,1fr)_300px_minmax(0,1fr)] gap-6 xl:gap-8 items-start">
+        <div className="hidden xl:grid xl:grid-cols-[minmax(0,1fr)_240px_minmax(0,1fr)] 2xl:grid-cols-[minmax(0,1fr)_300px_minmax(0,1fr)] gap-6 xl:gap-8 items-start">
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -234,7 +234,7 @@ export const FeaturesSection = () => {
           >
             {slideColumns[0].map((slide, idx) => renderFeatureCard(slide, idx))}
           </motion.div>
-
+ 
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -242,10 +242,10 @@ export const FeaturesSection = () => {
             transition={{ duration: 0.5 }}
             className="flex justify-center w-full xl:sticky xl:top-28 order-2 xl:order-2"
           >
-            <div className="relative w-full max-w-[270px] aspect-[9/19.5] bg-zinc-950 rounded-[36px] border-[5px] border-zinc-900 shadow-2xl overflow-hidden flex flex-col justify-between">
+            <div className="relative w-full xl:max-w-[220px] 2xl:max-w-[270px] aspect-[9/19.5] bg-zinc-950 xl:rounded-[30px] 2xl:rounded-[36px] xl:border-[4px] 2xl:border-[5px] border-zinc-900 shadow-2xl overflow-hidden flex flex-col justify-between">
               {/* Dynamic Island */}
-              <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-[85px] h-[22px] bg-black rounded-full z-50 flex items-center justify-end px-2.5 shadow-sm">
-                <div className="w-1.5 h-1.5 bg-[#080808] rounded-full border border-white/10 shadow-[inset_0_0_2px_rgba(255,255,255,0.2)]"></div>
+              <div className="absolute xl:top-2 2xl:top-2.5 left-1/2 -translate-x-1/2 xl:w-[70px] 2xl:w-[85px] xl:h-[18px] 2xl:h-[22px] bg-black rounded-full z-50 flex items-center justify-end xl:px-2 2xl:px-2.5 shadow-sm">
+                <div className="xl:w-1 2xl:w-1.5 xl:h-1 2xl:h-1.5 bg-[#080808] rounded-full border border-white/10 shadow-[inset_0_0_2px_rgba(255,255,255,0.2)]"></div>
               </div>
 
               <div className="relative flex-1 bg-zinc-950 flex flex-col overflow-hidden">

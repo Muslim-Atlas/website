@@ -25,7 +25,19 @@ export async function sendWaitlistEmail(formData: FormData) {
   const toAddress = process.env.WAITLIST_EMAIL_TO || 'hello@muslimatlas.app';
 
   try {
-    // Notify owner
+    // 1. Record contact into Resend Audience
+    const audienceId = process.env.RESEND_AUDIENCE_ID || '164f141d-a403-4ab5-ab92-1f32e58d7777';
+    try {
+      await resend.contacts.create({
+        email: safeEmail,
+        unsubscribed: false,
+        audienceId: audienceId,
+      });
+    } catch (contactErr) {
+      console.warn('Could not record contact to Resend audience:', contactErr);
+    }
+
+    // 2. Notify owner
     const { error: ownerError } = await resend.emails.send({
       from: 'Muslim Atlas <noreply@notifications.yqwebstudio.com>',
       to: toAddress,
@@ -66,7 +78,7 @@ export async function sendWaitlistEmail(formData: FormData) {
             Download Android Alpha
           </a>
           <p style="margin-top: 32px; font-size: 13px; color: #475569;">
-            JazakAllah khair for your support.<br />- The Muslim Atlas Team
+            JazakAllah khair for your support.<br />- The Muslim Atlas Team<br /><br /><span style="font-size: 11px; color: #475569;">No longer want these updates? <a href="https://muslimatlas.app/unsubscribe?email=${encodeURIComponent(safeEmail)}" style="color: #64748b; text-decoration: underline;">Unsubscribe</a></span>
           </p>
         </div>
       `,

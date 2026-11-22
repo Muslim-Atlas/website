@@ -1,4 +1,4 @@
-<!-- BEGIN:nextjs-agent-rules -->
+﻿<!-- BEGIN:nextjs-agent-rules -->
 # This is NOT the Next.js you know
 
 This version has breaking changes - APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
@@ -55,4 +55,14 @@ Agents must **never take autonomous action on external platforms (Jira, GitHub, 
 - TypeScript check (`npm run typecheck`) must pass with zero errors.
 - Next.js production build (`npm run build`) must compile cleanly.
 - Validate commit messages locally using commitlint before pushing.
+
+## 4. CodeRabbit Automated Review & Dual Approval Gate
+To ensure velocity and code quality, all pull requests must pass the **Dual Approval Gate**:
+1. **Gate 1 (Automated AI Review - CodeRabbit):**
+   - CodeRabbit analyzes PR diffs against ticket acceptance criteria ([MA-XX]).
+   - **Mandatory Approval:** CodeRabbit must approve the PR before it is submitted for human code review. Code review will not proceed until CodeRabbit approval is green.
+   - **Diff Isolation:** CodeRabbit is strictly instructed to evaluate only changed files and lines. Pre-existing issues outside the PR diff are non-blocking and will not delay approval.
+2. **Gate 2 (Human Lead Review - Yusuf Qureshi):**
+   - Once Gate 1 passes, the PR is placed into code review for Yusuf Qureshi.
+   - Final review and merge authorization rests exclusively with the human lead.
 <!-- END:engineering-workflow -->
